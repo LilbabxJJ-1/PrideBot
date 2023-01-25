@@ -1,4 +1,5 @@
 import discord
+from tokens import *
 from discord.ext import commands
 import dictionary as dic
 import pronouns as pro
@@ -48,4 +49,4 @@ def load_cogs():
 
 load_cogs()
 
-bot.run("MTA2NjY0MTMyNzExNjI1NTMzMw.GsVQdR.SwtQJoEWRPzJJyCoj3d3d1pn1SPASdwEpc2dXQ")
+bot.run(TOKEN)
