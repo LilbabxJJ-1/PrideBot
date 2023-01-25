@@ -27,5 +27,5 @@ class pronounCommands(commands.Cog):
                               color=0xA020F0)
         channel = await self.bot.fetch_channel(991806371815243836)
         await channel.send(embed=embed)
-        await ctx.respond("Successfully submitted suggestion!")
+        await ctx.respond("Successfully submitted suggestion")
         return
