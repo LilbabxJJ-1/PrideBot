@@ -10,6 +10,14 @@ intents = discord.Intents.all()
 activity = discord.Activity(type=discord.ActivityType.watching, name='Myself Being built')
 bot = commands.Bot(case_insensitive=True, intents=intents, help_command=None, activity=activity, chunk_guilds_at_startup=False)
 
+@bot.event
+async def on_guild_join(ctx):
+    embed = discord.Embed(title="New server!",
+                          description=f"{ctx.guild.name} invited me!",
+                          color=0xA020F0)
+    channel = await bot.fetch_channel(991806371815243836)
+    await channel.send(embed=embed)
+    return
 
 @bot.event
 async def on_ready():
