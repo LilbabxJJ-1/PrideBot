@@ -51,6 +51,7 @@ async def check(ctx, user: discord.Option(discord.User, description="User who's 
                               description=f":name_badge:Name:name_badge:: {check['Name']}"
                                           f"\n----------------------\n\n📃Pronouns📃: {check['Pronouns']}"
                                           f"\n----------------------\n\n🌈Sexuality🌈: {check['Sexuality']}"
+                                          f"\n----------------------\n\n♀Gender♂: {check['Gender']}"
                                           f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
                               colour=0xA020F0)
         embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
