@@ -1,6 +1,6 @@
 import discord
 from tokens import *
-from discord.ext import commands, ipc
+from discord.ext import commands
 import dictionary as dic
 import pronouns as pro
 import support as sup
