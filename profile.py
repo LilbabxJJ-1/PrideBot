@@ -6,8 +6,8 @@ profile = discord.SlashCommandGroup("profile", "Let everyone know who you are!")
 
 
 @profile.command(name="create")
-async def create(ctx, preferred_name: discord.Option(description="Your name"), sexuality: discord.Option(description="Sexuality you Indentify"),
-                 pronouns: discord.Option(description="Pronouns you prefer"), closeted: discord.Option(description="Are you in the closet or open?")):
+async def create(ctx, preferred_name: discord.Option(description="Your name"), sexuality: discord.Option(description="Sexuality you indentify as"),
+                 pronouns: discord.Option(description="Pronouns you prefer"), gender: discord.Option(description="Gender you indentify as"), closeted: discord.Option(description="Are you in the closet or open?")):
     check = profiles.find_one({"ID": ctx.author.id})
     if check is not None:
         await ctx.respond("You already have a profile made!", ephemeral=True)
@@ -18,6 +18,7 @@ async def create(ctx, preferred_name: discord.Option(description="Your name"), s
         "Name": preferred_name,
         "Sexuality": sexuality,
         "Pronouns": pronouns,
+        "Gender": gender,
         "Closet": closeted
     }
     profiles.insert_one(user)
@@ -36,6 +37,7 @@ async def check(ctx, user: discord.Option(discord.User, description="User who's 
                               description=f":name_badge:Name:name_badge:: {check['Name']}"
                                           f"\n----------------------\n\n📃Pronouns📃: {check['Pronouns']}"
                                           f"\n----------------------\n\n🌈Sexuality🌈: {check['Sexuality']}"
+                                          f"\n----------------------\n\n♀Gender♂: {check['Gender']}"
                                           f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
                               colour=0xA020F0)
         embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
