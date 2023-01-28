@@ -59,7 +59,7 @@ async def check(ctx, user: discord.Option(discord.User, description="User who's 
     return await ctx.respond(embed=embed)
 
 
-@profile.command(name="Name")
+@profile.command(name="name")
 async def Name(ctx, name: discord.Option(discord.User, description="Update name status")):
     """Update the name on your profile"""
     user = profiles.find_one({"ID": ctx.author.id})
