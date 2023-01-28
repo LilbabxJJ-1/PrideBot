@@ -1,17 +1,13 @@
-import random
-
 import discord
 from tokens import *
-from discord.ext import commands
-import dictionary as dic
-import pronouns as pro
-import support as sup
-from profile import profile
+from discord.ext import commands as cd
+from commands import dictionary as dic, pronouns as pro, support as sup
+from commands.profile import profile
 import topgg
 
 intents = discord.Intents.all()
 activity = discord.Activity(type=discord.ActivityType.watching, name='Myself Being built')
-bot = commands.Bot(case_insensitive=True, intents=intents, help_command=None, activity=activity, chunk_guilds_at_startup=False)
+bot = cd.Bot(case_insensitive=True, intents=intents, help_command=None, activity=activity, chunk_guilds_at_startup=False)
 
 
 dbl_token = dbltoken  # set this to your bot's Top.gg token
