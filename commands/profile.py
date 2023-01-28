@@ -60,7 +60,7 @@ async def check(ctx, user: discord.Option(discord.User, description="User who's 
 
 
 @profile.command(name="name")
-async def Name(ctx, name: discord.Option(discord.User, description="Update name status")):
+async def Name(ctx, name: discord.Option(str, description="Update name status")):
     """Update the name on your profile"""
     user = profiles.find_one({"ID": ctx.author.id})
     if user is None:
@@ -71,7 +71,7 @@ async def Name(ctx, name: discord.Option(discord.User, description="Update name 
     await ctx.respond("Successfully updated your Name status")
 
 @profile.command(name="pronouns")
-async def pronouns(ctx, pronouns: discord.Option(discord.User, description="Update pronouns")):
+async def pronouns(ctx, pronouns: discord.Option(str, description="Update pronouns")):
     """Update the pronouns on your profile"""
     user = profiles.find_one({"ID": ctx.author.id})
     if user is None:
@@ -83,7 +83,7 @@ async def pronouns(ctx, pronouns: discord.Option(discord.User, description="Upda
 
 
 @profile.command(name="sexuality")
-async def sexuality(ctx, sexuality: discord.Option(discord.User, description="Update sexuality")):
+async def sexuality(ctx, sexuality: discord.Option(str, description="Update sexuality")):
     """Update your profile sexuality"""
     user = profiles.find_one({"ID": ctx.author.id})
     if user is None:
@@ -95,7 +95,7 @@ async def sexuality(ctx, sexuality: discord.Option(discord.User, description="Up
 
 
 @profile.command(name="closeted")
-async def Closested(ctx, closet: discord.Option(discord.User, description="Update closet status")):
+async def Closested(ctx, closet: discord.Option(str, description="Update closet status")):
     """Update the closet on your profile"""
     user = profiles.find_one({"ID": ctx.author.id})
     if user is None:
@@ -107,7 +107,7 @@ async def Closested(ctx, closet: discord.Option(discord.User, description="Updat
 
 
 @profile.command(name="gender")
-async def Gender(ctx, gender: discord.Option(discord.User, description="Update gender status")):
+async def Gender(ctx, gender: discord.Option(str, description="Update gender status")):
     """Update the gender on your profile"""
     user = profiles.find_one({"ID": ctx.author.id})
     if user is None:
