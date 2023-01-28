@@ -59,6 +59,17 @@ async def check(ctx, user: discord.Option(discord.User, description="User who's 
     return await ctx.respond(embed=embed)
 
 
+@profile.command(name="Name")
+async def Name(ctx, name: discord.Option(discord.User, description="Update name status")):
+    """Update the name on your profile"""
+    user = profiles.find_one({"ID": ctx.author.id})
+    if user is None:
+        await ctx.respond("No account found for this user! Please use /create first!")
+        return
+
+    profiles.update_one({"ID":ctx.author.id}, {"$set":{"name": name}})
+    await ctx.respond("Successfully updated your Name status")
+
 @profile.command(name="pronouns")
 async def pronouns(ctx, pronouns: discord.Option(discord.User, description="Update pronouns")):
     """Update the pronouns on your profile"""
@@ -93,3 +104,15 @@ async def Closested(ctx, closet: discord.Option(discord.User, description="Updat
 
     profiles.update_one({"ID":ctx.author.id}, {"$set":{"Closet": closet}})
     await ctx.respond("Successfully updated your Closet status")
+
+
+@profile.command(name="gender")
+async def Gender(ctx, gender: discord.Option(discord.User, description="Update gender status")):
+    """Update the gender on your profile"""
+    user = profiles.find_one({"ID": ctx.author.id})
+    if user is None:
+        await ctx.respond("No account found for this user! Please use /create first!")
+        return
+
+    profiles.update_one({"ID":ctx.author.id}, {"$set":{"Gender": gender}})
+    await ctx.respond("Successfully updated your Gender status")

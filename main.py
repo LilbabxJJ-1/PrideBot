@@ -1,3 +1,5 @@
+import random
+
 import discord
 from tokens import *
 from discord.ext import commands
@@ -14,6 +16,14 @@ bot = commands.Bot(case_insensitive=True, intents=intents, help_command=None, ac
 
 dbl_token = dbltoken  # set this to your bot's Top.gg token
 bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=True)
+
+
+@bot.event
+async def on_interaction(interaction):
+    if str(interaction.type) == "InteractionType.application_command":
+        num = random.randint(1, 100)
+        if num <= 15:
+            interaction.guild.send()
 
 
 @bot.event
