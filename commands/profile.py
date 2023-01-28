@@ -67,7 +67,7 @@ async def Name(ctx, name: discord.Option(str, description="Update name status"))
         await ctx.respond("No account found for this user! Please use /create first!")
         return
 
-    profiles.update_one({"ID":ctx.author.id}, {"$set":{"name": name}})
+    profiles.update_one({"ID":ctx.author.id}, {"$set":{"Name": name}})
     await ctx.respond("Successfully updated your Name status")
 
 @profile.command(name="pronouns")
