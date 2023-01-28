@@ -17,6 +17,7 @@ bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=Tr
 
 @bot.slash_command(name="vote")
 async def vote(ctx):
+    """Vote for the bot TopGG"""
     embed = discord.Embed(title="Vote for PrideBot",
                           description="If you're enjoying PrideBot, please consider leaving a review on Top.gg! https://top.gg/bot/1066641327116255333#reviews",
                           color=0xA020F0)

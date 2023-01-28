@@ -2,6 +2,7 @@ from discord.ext import commands
 import discord
 from difflib import get_close_matches as closest
 from tokens import *
+import random
 
 
 class DictionaryCommands(commands.Cog):
@@ -11,6 +12,14 @@ class DictionaryCommands(commands.Cog):
     @commands.slash_command(name="define")
     async def define(self, ctx, word: discord.Option(description="lGBTQ+ word to look up")):
         """Get a definition for our LGBTQ terms"""
+        chances = random.choice(list(range(1, 100)))
+        if chances <= 15:
+            embed = discord.Embed(title="Like the bot?",
+                                  description="If you're enjoying PrideBot, please consider donating to the owners GoFundMe to help them go to college!"
+                                              "\n --> https://gofund.me/557611f3\nIf you can't donate, that's okay! You can still show your support by upvoting on Top.gg"
+                                              "\n -->..https://top.gg/bot/1066641327116255333#reviews",
+                                  colour=0xA020F0)
+            await ctx.send(embed=embed)
         term = mycol.find_one({"Term": str(word).title()})
         if term is not None:
             embed = discord.Embed(title=f"Definition for {str(word).title()}",

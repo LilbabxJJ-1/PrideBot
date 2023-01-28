@@ -19,11 +19,11 @@ class supportCommands(commands.Cog):
         await ctx.respond(embed=embed)
         chances = random.choice(list(range(1, 100)))
         # Come change this
-        if chances == -20:
+        if chances <= 15:
             embed = discord.Embed(title="Like the bot?",
                                   description="If you're enjoying PrideBot, please consider donating to the owners GoFundMe to help them go to college!"
                                               "\n --> https://gofund.me/557611f3\nIf you can't donate, that's okay! You can still show your support by upvoting on Top.gg"
-                                              "\n -->..",
+                                              "\n -->..https://top.gg/bot/1066641327116255333#reviews",
                                   colour=0xA020F0)
             await ctx.send(embed=embed)
 
@@ -70,6 +70,14 @@ class supportCommands(commands.Cog):
 
 
         await ctx.respond(embed=embed)
+        chances = random.choice(list(range(1, 100)))
+        if chances <= 15:
+            embed = discord.Embed(title="Like the bot?",
+                                  description="If you're enjoying PrideBot, please consider donating to the owners GoFundMe to help them go to college!"
+                                              "\n --> https://gofund.me/557611f3\nIf you can't donate, that's okay! You can still show your support by upvoting on Top.gg"
+                                              "\n -->..https://top.gg/bot/1066641327116255333#reviews",
+                                  colour=0xA020F0)
+            await ctx.send(embed=embed)
 
 
 
