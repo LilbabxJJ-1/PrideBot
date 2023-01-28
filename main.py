@@ -23,7 +23,7 @@ async def on_interaction(interaction):
     if str(interaction.type) == "InteractionType.application_command":
         num = random.randint(1, 100)
         if num <= 15:
-            interaction.guild.send()
+            interaction.channel.send()
 
 
 @bot.event
