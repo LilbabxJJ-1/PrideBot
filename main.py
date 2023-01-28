@@ -26,7 +26,7 @@ async def on_autopost_success():
 @bot.event
 async def on_guild_join(ctx):
     embed = discord.Embed(title="New server!",
-                          description=f"{ctx.guild.name} invited me!",
+                          description=f"{ctx.name} invited me!",
                           color=0xA020F0)
     channel = await bot.fetch_channel(991806371815243836)
     await channel.send(embed=embed)
