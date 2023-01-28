@@ -5,10 +5,23 @@ import dictionary as dic
 import pronouns as pro
 import support as sup
 from profile import profile
+import topgg
 
 intents = discord.Intents.all()
 activity = discord.Activity(type=discord.ActivityType.watching, name='Myself Being built')
 bot = commands.Bot(case_insensitive=True, intents=intents, help_command=None, activity=activity, chunk_guilds_at_startup=False)
+
+
+dbl_token = dbltoken  # set this to your bot's Top.gg token
+bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=True)
+
+
+@bot.event
+async def on_autopost_success():
+    print(
+        f"Posted server count ({bot.topggpy.guild_count}), shard count ({bot.shard_count})"
+    )
+
 
 @bot.event
 async def on_guild_join(ctx):
