@@ -14,15 +14,7 @@ dbl_token = dbltoken  # set this to your bot's Top.gg token
 bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=True)
 
 
-@bot.event
-async def on_interaction(interaction):
-    users = banned.find_one({"get":"get"})
-    for i in users["Banned"]:
-        if interaction.author.id == i:
-            await interaction.respond("You are banned from using this bot, sorry for the inconvenience")
-            return
-    else:
-        await bot.process_application_commands(interaction)
+
 
 
 
