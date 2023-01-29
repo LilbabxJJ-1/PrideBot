@@ -16,7 +16,7 @@ bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=Tr
 
 @bot.slash_command(name="bcount")
 async def count(ctx):
-    ctx.respond(f"Bot is in {len(bot.guilds)} guilds!")
+    await ctx.respond(f"Bot is in {len(bot.guilds)} guilds!")
 
 @bot.slash_command(name="vote")
 async def vote(ctx):
