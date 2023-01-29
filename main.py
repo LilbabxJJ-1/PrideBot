@@ -14,8 +14,8 @@ dbl_token = dbltoken  # set this to your bot's Top.gg token
 bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=True)
 
 
-@bot.slash_command(name="BCount")
-@bot.is_owner
+@bot.slash_command(name="bcount")
+@bot.is_owner()
 async def count(ctx):
     ctx.respond(f"Bot is in {len(bot.guilds)} guilds!")
 
