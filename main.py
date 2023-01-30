@@ -104,7 +104,7 @@ def load_cogs():
     bot.add_application_command(profile)
 
 load_cogs()
-t = Thread(target=partial_run)
+t = Thread(target=partial_run("0.0.0.0"))
 t.start()
 
 bot.run(TOKEN)
