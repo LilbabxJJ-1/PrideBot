@@ -99,6 +99,7 @@ class supportCommands(commands.Cog):
                                               f" /suggestpronouns `sentence` - Suggest sentences to better the future of the pronoun command",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
+            embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
         elif category == "Support":
             embed = discord.Embed(title=f"Commands for {category}",
@@ -106,7 +107,7 @@ class supportCommands(commands.Cog):
                                               f""" /Support `type` (Shown below):\n- Hrt\n - Therapy\n - Hotlines\n - Talking to familiy\n - Coming out""",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
-            embed.set_thumbnail(url=self.bot.avatar)
+            embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
         elif category == "Profile":
             embed = discord.Embed(title=f"Commands for {category}",
@@ -120,7 +121,7 @@ class supportCommands(commands.Cog):
                                               ,
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
-            embed.set_thumbnail(url=self.bot.avatar)
+            embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
         else:
             embed = discord.Embed(title=f"Commands for {category}",
@@ -130,5 +131,5 @@ class supportCommands(commands.Cog):
                                               f" /help - This command",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
-            embed.set_thumbnail(url=self.bot.avatar)
+            embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
