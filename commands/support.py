@@ -81,11 +81,50 @@ class supportCommands(commands.Cog):
 
 
 
-    #@commands.slash_command(name="help")
-    #async def help(self, ctx, command: discord.Option(str, choices=['define', 'suggestpronouns', "prideservers", "hotlines", "support"])):
-    #    """Find out what a command does and it's description"""
-    #    command = commands.Bot.get_application_command(self.bot, command)
-    #    embed = discord.Embed(title=f"Description for {command}",
-    #                  description=f"Name: {command}\nParameters: {command._get_signature_parameters()}"
-    #                              f"Description: {command}")
-    #    await ctx.respond(embed=embed)
+    @commands.slash_command(name="help")
+    async def help(self, ctx, category: discord.Option(str, choices=['Definitions', 'Pronouns', "Support", "Profile", "Misc"])):
+        """Find out commands in a specific category and what it does"""
+        if category == "Definitions":
+            embed = discord.Embed(title=f"Commands for {category}",
+                                  description=f" /define `word` - Defines a given LGBTQ related term\n"
+                                              f" /tonetags - Gives a list of common tonetags\n"
+                                              f" /suggesttone `tonetag` - Allows user to suggest a tonetag to the /tonetags list",
+                                  colour=0xA020F0)
+            embed.set_footer(text="Remember to check out the other commands!")
+            await ctx.respond(embed=embed)
+        elif category == "Pronouns":
+            embed = discord.Embed(title=f"Commands for {category}",
+                                  description=f" /testpronouns `pronoun1` `pronoun2` - Use to test out pronouns (BETA)\n"
+                                              f" /suggestpronouns `sentence` - Suggest sentences to better the future of the pronoun command",
+                                  colour=0xA020F0)
+            embed.set_footer(text="Remember to check out the other commands!")
+            await ctx.respond(embed=embed)
+        elif category == "Support":
+            embed = discord.Embed(title=f"Commands for {category}",
+                                  description=f" /PrideServers - Shows a list of safeplaces that you can join!\n"
+                                              f""" /Support `type` (Shown below):\n- Hrt\n - Therapy\n - Hotlines\n - Talking to familiy\n - Coming out""",
+                                  colour=0xA020F0)
+            embed.set_footer(text="Remember to check out the other commands!")
+            await ctx.respond(embed=embed)
+        elif category == "Profile":
+            embed = discord.Embed(title=f"Commands for {category}",
+                                  description=f" /profile create - Create a profile to keep people up to date on your identity\n"
+                                              f" /profile check `user` - Look at someone's profile. To look at your own, don't add a user\n"
+                                              f" /profile name `new name` - Update the name on your profile\n"
+                                              f" /profile sexuality `new sexuality` - Update the sexuality on your profile\n"
+                                              f" /profile pronouns `new pronouns` - Update the pronouns on your profile\n"
+                                              f" /profile closet `new closet status` - Update the closet status on your profile\n"
+                                              f" /profile gender `new gender` - Update the gender on your profile\n"
+                                              ,
+                                  colour=0xA020F0)
+            embed.set_footer(text="Remember to check out the other commands!")
+            await ctx.respond(embed=embed)
+        else:
+            embed = discord.Embed(title=f"Commands for {category}",
+                                  description=f" /vote - Vote and review the bot on TopGG\n"
+                                              f" /invite - Get an invite for the bot\n"
+                                              f" /donate - Donate to the Owners GoFundMe to help college funds\n"
+                                              f" /help - This command",
+                                  colour=0xA020F0)
+            embed.set_footer(text="Remember to check out the other commands!")
+            await ctx.respond(embed=embed)

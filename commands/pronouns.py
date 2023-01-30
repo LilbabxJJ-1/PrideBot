@@ -9,7 +9,7 @@ class pronounCommands(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(name="testpronouns")
-    async def test_pronouns(self, ctx, name: discord.Option(description="Your name"), pronoun1: discord.Option(description="If using They/Them, They would go here"), pronoun2: discord.Option(description="If using They/Them, Them would go here")):
+    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), pronoun1: discord.Option(description="If using They/Them, They would go here"), pronoun2: discord.Option(description="If using They/Them, Them would go here")):
         """Test out your pronouns! More pronoun slots soon"""
         sentences = [f"{name} ate food because {pronoun1} was hungry.",
                      f"Have you seen {name}? {pronoun1} is supposed to go to the mall with me, let me know when you see {pronoun2}",

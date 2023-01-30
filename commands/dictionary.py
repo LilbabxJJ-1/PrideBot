@@ -10,7 +10,7 @@ class DictionaryCommands(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(name="define")
-    async def define(self, ctx, word: discord.Option(description="lGBTQ+ word to look up")):
+    async def define(self, ctx, word: discord.Option(description="LGBTQ+ word to look up")):
         """Get a definition for our LGBTQ terms"""
         chances = random.choice(list(range(1, 100)))
         if chances <= 15:
