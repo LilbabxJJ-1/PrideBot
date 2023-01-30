@@ -91,7 +91,7 @@ class supportCommands(commands.Cog):
                                               f" /suggesttone `tonetag` - Allows user to suggest a tonetag to the /tonetags list",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
-            embed.set_thumbnail(url=self.bot.avatar)
+            embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
         elif category == "Pronouns":
             embed = discord.Embed(title=f"Commands for {category}",
