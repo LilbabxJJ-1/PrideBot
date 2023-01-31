@@ -6,14 +6,7 @@ from commands.profile import profile
 import topgg
 from threading import Thread
 from functools import partial
-from flask import Flask, render_template
-app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html', servers=len(bot.guilds), users=len(bot.users), commands=len(bot.application_commands))
-
-partial_run = partial(app.run)
 
 intents = discord.Intents.all()
 activity = discord.Activity(type=discord.ActivityType.watching, name='Myself Being built')
@@ -104,7 +97,7 @@ def load_cogs():
     bot.add_application_command(profile)
 
 load_cogs()
-t = Thread(target=partial_run("0.0.0.0"))
-t.start()
+#t = Thread(target=partial_run)
+#t.start()
 
 bot.run(TOKEN)
