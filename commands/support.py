@@ -125,9 +125,9 @@ class supportCommands(commands.Cog):
             await ctx.respond(embed=embed)
         else:
             embed = discord.Embed(title=f"Commands for {category}",
-                                  description=f" /vote - Vote and review the bot on TopGG\n"
-                                              f" /invite - Get an invite for the bot\n"
-                                              f" /donate - Donate to the Owners GoFundMe to help college funds\n"
+                                  description=f" </vote:1068765760568180806> - Vote and review the bot on TopGG\n"
+                                              f" </invite:1067884336868769802> - Get an invite for the bot\n"
+                                              f" </donate:1067349685041381406> - Donate to the Owners GoFundMe to help college funds\n"
                                               f" /help - This command",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
