@@ -13,7 +13,7 @@ class pronounCommands(commands.Cog):
                            possesive_pronoun: discord.Option(description="Example: Theirs"), reflective_pronoun: discord.Option(description="Example: Themself")):
         """Test out your pronouns! More pronoun slots soon"""
         send = random.choice(sentences).replace("NAME", name).replace("SUBJECT", subjective_pronoun).replace("PP", possesive_pronoun).replace("OBJECTIVE", objective_pronoun).replace("REFLECT", reflective_pronoun).replace("PD", possessive_determiner)
-        await ctx.respond()
+        await ctx.respond(send)
         await ctx.send("These may come out as incorrect grammatically since this is still very new")
         return
 
