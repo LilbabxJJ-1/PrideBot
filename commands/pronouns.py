@@ -9,13 +9,11 @@ class pronounCommands(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(name="testpronouns")
-    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), pronoun1: discord.Option(description="If using They/Them, They would go here"), pronoun2: discord.Option(description="If using They/Them, Them would go here")):
+    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), Subjective_Pronouns: discord.Option(description="Example: They"), Objective_Pronoun: discord.Option(description="Example: Them"), Possessive_Determiner: discord.Option(description="Example: Their"),
+                           Possesive_Pronoun: discord.Option(description="Example: Theirs"), Reflective_Pronoun: discord.Option(description="Example: Themself")):
         """Test out your pronouns! More pronoun slots soon"""
-        sentences = [f"{name} ate food because {pronoun1} was hungry.",
-                     f"Have you seen {name}? {pronoun1} is supposed to go to the mall with me, let me know when you see {pronoun2}",
-                     f"{name} is a great friend! I enjoy being around {pronoun2}"]
-
-        await ctx.respond(random.choice(sentences))
+        send = random.choice(sentences).replace("NAME", name).replace("SUBJECT", Subjective_Pronouns).replace("PP", Possesive_Pronoun).replace("OBJECTIVE", Objective_Pronoun).replace("REFLECT", Reflective_Pronoun).replace("PD", Possessive_Determiner)
+        await ctx.respond()
         await ctx.send("These may come out as incorrect grammatically since this is still very new")
         return
 
