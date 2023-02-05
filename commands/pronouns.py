@@ -9,10 +9,10 @@ class pronounCommands(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(name="testpronouns")
-    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), Subjective_Pronouns: discord.Option(description="Example: They"), Objective_Pronoun: discord.Option(description="Example: Them"), Possessive_Determiner: discord.Option(description="Example: Their"),
-                           Possesive_Pronoun: discord.Option(description="Example: Theirs"), Reflective_Pronoun: discord.Option(description="Example: Themself")):
+    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), subjective_pronoun: discord.Option(description="Example: They"), objective_pronoun: discord.Option(description="Example: Them"), possessive_determiner: discord.Option(description="Example: Their"),
+                           possesive_pronoun: discord.Option(description="Example: Theirs"), reflective_pronoun: discord.Option(description="Example: Themself")):
         """Test out your pronouns! More pronoun slots soon"""
-        send = random.choice(sentences).replace("NAME", name).replace("SUBJECT", Subjective_Pronouns).replace("PP", Possesive_Pronoun).replace("OBJECTIVE", Objective_Pronoun).replace("REFLECT", Reflective_Pronoun).replace("PD", Possessive_Determiner)
+        send = random.choice(sentences).replace("NAME", name).replace("SUBJECT", subjective_pronoun).replace("PP", possesive_pronoun).replace("OBJECTIVE", objective_pronoun).replace("REFLECT", reflective_pronoun).replace("PD", possessive_determiner)
         await ctx.respond()
         await ctx.send("These may come out as incorrect grammatically since this is still very new")
         return
