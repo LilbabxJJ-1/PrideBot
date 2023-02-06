@@ -9,8 +9,8 @@ class pronounCommands(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(name="testpronouns")
-    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), subjective_pronoun: discord.Option(description="Example: They"), objective_pronoun: discord.Option(description="Example: Them"), possessive_determiner: discord.Option(description="Example: Their"),
-                           possesive_pronoun: discord.Option(description="Example: Theirs"), reflective_pronoun: discord.Option(description="Example: Themself")):
+    async def testpronouns(self, ctx, name: discord.Option(description="Your name"), subjective_pronoun: discord.Option(description="Example: They | He | She"), objective_pronoun: discord.Option(description="Example: Them | Him | Her "), possessive_determiner: discord.Option(description="Example: Their | His | Her"),
+                           possesive_pronoun: discord.Option(description="Example: Theirs | His | Hers"), reflective_pronoun: discord.Option(description="Example: Themself | Himself | Herself")):
         """Test out your pronouns! More pronoun slots soon"""
         send = random.choice(sentences).replace("NAME", name).replace("SUBJECT", subjective_pronoun).replace("PP", possesive_pronoun).replace("OBJECTIVE", objective_pronoun).replace("REFLECT", reflective_pronoun).replace("PD", possessive_determiner)
         embed = discord.Embed(title="Try out your pronouns!",
