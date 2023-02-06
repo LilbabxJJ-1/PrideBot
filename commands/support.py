@@ -95,7 +95,7 @@ class supportCommands(commands.Cog):
         elif category == "Pronouns":
             embed = discord.Embed(title=f"Commands for {category}",
                                   description=f" </testpronouns:1067343985900785695> - Use to test out pronouns (BETA):\n-`Name`\n-`Subjective Pronouns`\n-`Objective Pronouns`\n"
-                                              f"-`Possessive Determiner`\n-`Possessive Pronoun`\n-`Reflective Pronoun`"
+                                              f"-`Possessive Determiner`\n-`Possessive Pronoun`\n-`Reflective Pronoun`\n"
                                               f" </suggestpronouns:1067184141352845344> `sentence` - Suggest sentences to better the future of the pronoun command",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
