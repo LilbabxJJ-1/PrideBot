@@ -103,8 +103,8 @@ class supportCommands(commands.Cog):
             await ctx.respond(embed=embed)
         elif category == "Support":
             embed = discord.Embed(title=f"Commands for {category}",
-                                  description=f" </PrideServers:1067197553109635162> - Shows a list of safeplaces that you can join!\n"
-                                              f""" </Support:1067333840877658142>`type` (Shown below):\n- Hrt\n - Therapy\n - Hotlines\n - Talking to familiy\n - Coming out""",
+                                  description=f" </prideServers:1067197553109635162> - Shows a list of safeplaces that you can join!\n"
+                                              f""" </support:1067333840877658142>`type` (Shown below):\n- Hrt\n - Therapy\n - Hotlines\n - Talking to familiy\n - Coming out""",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
             embed.set_thumbnail(url=self.bot.user.avatar)
