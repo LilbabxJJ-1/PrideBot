@@ -52,7 +52,7 @@ async def server(ctx):
     embed = discord.Embed(title="Support Server",
                           description="PrideBot Suppport Server Invite [here](https://discord.gg/JsztWV2zMd)",
                           color=0xA020F0)
-
+    await ctx.response(embed)
 
 @bot.event
 async def on_guild_join(ctx):
