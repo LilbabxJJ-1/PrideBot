@@ -64,6 +64,15 @@ async def on_guild_join(ctx):
     await channel.send(embed=embed)
     return
 
+
+@bot.slash_command(name="bot-info")
+async def botinfo(ctx):
+    embed=discord.Embed(title="Bot Info",
+                        description=f"Name: PrideBot\nID: {bot.user.id}\nSlash-Commands: {len(bot.application_commands)}\nUsers: {len(bot.users)}\n Servers: {len(bot.guilds)}",
+                        color=0xA020F0)
+    await ctx.respond(embed=embed)
+    return
+
 @bot.event
 async def on_ready():
     print("Bot is ready")
