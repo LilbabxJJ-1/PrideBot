@@ -37,6 +37,7 @@ class funCommands(commands.Cog):
                               description="",
                               color=0xA020F0)
         embed.set_image(url=f"https://api.resetxd.xyz/love-me?avatar1={ctx.author.avatar}&avatar2={seconduser.avatar}")
+        await ctx.respond(embed=embed)
 
 
     @commands.slash_command(name="jail")
