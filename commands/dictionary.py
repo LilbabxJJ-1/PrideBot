@@ -83,7 +83,7 @@ class DictionaryCommands(commands.Cog):
                               /p - Platonic\n
                               /r - Romantic\n
                               /nm - Not Mad\n
-                              /neg - Negative
+                              /neg - Negative\n
                               /pos - Positive
                               """,
                               colour=0xA020F0)
