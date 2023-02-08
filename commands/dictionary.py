@@ -37,6 +37,16 @@ class DictionaryCommands(commands.Cog):
                 await ctx.respond(f"I don't know that word! Please try again and make sure it's lgbtq related | No suggest words..", ephemeral=True)
                 return
 
+    @commands.slash_command(name="suggest-definition")
+    async def suggestdef(self, ctx, term: discord.Option(description="LGBTQ+ Term"), definition: discord.Option(description="Definition of the term")):
+        embed = discord.Embed(title="New Defintion Suggested",
+                              description=f"Term: {term}\nDefiniton: {definition}\nID: {ctx.author.id}",
+                              color=0xA020F0)
+        channel = await self.bot.fetch_channel(991806371815243836)
+        await channel.send(embed=embed)
+        await ctx.respond("Successfully logged your suggestion!")
+
+
     @commands.slash_command(name="add-definition")
     @commands.is_owner()
     async def add_definition(self, ctx, word, definition):
@@ -80,10 +90,10 @@ class DictionaryCommands(commands.Cog):
         return
 
     @commands.slash_command(name="suggest-tonetags")
-    async def suggesttone(self, ctx, tonetag: discord.Option(description="Tone tag that you want added")):
+    async def suggesttone(self, ctx, tonetag: discord.Option(description="Tone tag that you want added"), meaning: discord.Option(description="What does this tonetag mean?")):
         """Suggest tonetags that can be added to the /tonetags list"""
         embed = discord.Embed(title="Tonetag Suggestion",
-                              description=tonetag,
+                              description=f"Tag: {tonetag}\nMeaning: {meaning}",
                               color=0xA020F0)
         channel = await self.bot.fetch_channel(991806371815243836)
         await channel.send(embed=embed)
