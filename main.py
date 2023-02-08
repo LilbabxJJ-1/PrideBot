@@ -68,7 +68,8 @@ async def on_guild_join(ctx):
 @bot.slash_command(name="bot-info")
 async def botinfo(ctx):
     embed=discord.Embed(title="Bot Info",
-                        description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users***: {len(bot.users)}\n **Servers**: {len(bot.guilds)}",
+                        description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n **Servers**: {len(bot.guilds)}"
+                                    f"\n**Definitions**: 10\n**Profiles Created**: 15",
                         color=0xA020F0)
     embed.set_thumbnail(url=bot.user.avatar)
     embed.set_footer(text="Invite me to your server with /invite")
