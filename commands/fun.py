@@ -25,6 +25,7 @@ class funCommands(commands.Cog):
         embed = discord.Embed(title="Aww! We ship it!",
                               description="",
                               color=0xA020F0)
+
         embed.set_image(url=f"https://api.popcat.xyz/ship?user1={user1.avatar}&user2={user2.avatar}")
         await ctx.respond(embed=embed)
         return
@@ -36,6 +37,7 @@ class funCommands(commands.Cog):
         embed = discord.Embed(title="💘Love Compatibility💞",
                               description="",
                               color=0xA020F0)
+        print(ctx.author.avatar)
         embed.set_image(url=f"https://api.resetxd.xyz/love-me?avatar1={ctx.author.avatar}&avatar2={seconduser.avatar}")
         await ctx.respond(embed=embed)
 
