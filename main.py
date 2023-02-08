@@ -1,11 +1,10 @@
 import discord
 from tokens import *
 from discord.ext import commands as cd
-from commands import dictionary as dic, pronouns as pro, support as sup
+from commands import dictionary as dic, pronouns as pro, support as sup, fun
 from commands.profile import profile
 import topgg
-from threading import Thread
-from functools import partial
+
 
 
 intents = discord.Intents.all()
@@ -117,6 +116,7 @@ def load_cogs():
     bot.add_cog(pro.pronounCommands(bot))
     bot.add_cog(sup.supportCommands(bot))
     bot.add_application_command(profile)
+    bot.add_cog(fun.funCommands(bot))
 
 load_cogs()
 #t = Thread(target=partial_run)
