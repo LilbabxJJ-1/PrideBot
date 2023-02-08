@@ -8,7 +8,7 @@ class pronounCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command(name="testpronouns")
+    @commands.slash_command(name="test-pronouns")
     async def testpronouns(self, ctx, name: discord.Option(description="Your name"), subjective_pronoun: discord.Option(description="Example: They | He | She"), objective_pronoun: discord.Option(description="Example: Them | Him | Her "), possessive_determiner: discord.Option(description="Example: Their | His | Her"),
                            possesive_pronoun: discord.Option(description="Example: Theirs | His | Hers"), reflective_pronoun: discord.Option(description="Example: Themself | Himself | Herself")):
         """Test out your pronouns! More pronoun slots soon"""
@@ -20,7 +20,7 @@ class pronounCommands(commands.Cog):
         #await ctx.send("These may come out as incorrect grammatically since this is still very new")
         return
 
-    @commands.slash_command(name="suggestpronouns")
+    @commands.slash_command(name="suggest-pronouns")
     async def suggestPronouns(self, ctx, sentence: discord.Option(description="A sentence that can be used to test pronouns")):
         """Suggest sentences we can use for the /testpronouns command"""
         embed = discord.Embed(title="Pronoun Sentence",

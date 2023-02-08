@@ -37,7 +37,7 @@ class DictionaryCommands(commands.Cog):
                 await ctx.respond(f"I don't know that word! Please try again and make sure it's lgbtq related | No suggest words..", ephemeral=True)
                 return
 
-    @commands.slash_command(name="adddefinition")
+    @commands.slash_command(name="add-definition")
     @commands.is_owner()
     async def add_definition(self, ctx, word, definition):
         """Way for bot owner to add terms to dictionary"""
@@ -79,7 +79,7 @@ class DictionaryCommands(commands.Cog):
         await ctx.respond(embed=embed)
         return
 
-    @commands.slash_command(name="suggesttone")
+    @commands.slash_command(name="suggest-tonetags")
     async def suggesttone(self, ctx, tonetag: discord.Option(description="Tone tag that you want added")):
         """Suggest tonetags that can be added to the /tonetags list"""
         embed = discord.Embed(title="Tonetag Suggestion",

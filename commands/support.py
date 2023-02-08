@@ -8,7 +8,7 @@ class supportCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command(name="prideservers")
+    @commands.slash_command(name="pride-servers")
     async def prideServers(self, ctx):
         """Get a list of LGBTQ oriented discord servers"""
         embed = discord.Embed(title="Servers for LGBTQ+",
