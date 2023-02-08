@@ -71,7 +71,7 @@ async def botinfo(ctx):
     procount = profiles.count_documents({})
     defcount = mycol.count_documents({})
     embed=discord.Embed(title="Bot Info",
-                        description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n **Servers**: {len(bot.guilds)}"
+                        description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n**Servers**: {len(bot.guilds)}"
                                     f"\n**Definitions**: {defcount}\n**Profiles Created**: {procount}",
                         color=0xA020F0)
     embed.set_thumbnail(url=bot.user.avatar)
