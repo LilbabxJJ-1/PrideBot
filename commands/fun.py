@@ -15,4 +15,5 @@ class funCommands(commands.Cog):
                             description="",
                             color=0xA020F0)
         embed.set_image(url=f"https://api.popcat.xyz/whowouldwin?image2={ctx.author.avatar}&image1={seconduser.avatar}")
+        await ctx.respond(embed=embed)
         return
