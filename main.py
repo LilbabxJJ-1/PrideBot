@@ -67,6 +67,7 @@ async def on_guild_join(ctx):
 
 @bot.slash_command(name="bot-info")
 async def botinfo(ctx):
+    """See information about PrideBot"""
     embed=discord.Embed(title="Bot Info",
                         description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n **Servers**: {len(bot.guilds)}"
                                     f"\n**Definitions**: 10\n**Profiles Created**: 15",
