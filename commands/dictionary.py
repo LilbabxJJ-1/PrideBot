@@ -83,6 +83,8 @@ class DictionaryCommands(commands.Cog):
                               /p - Platonic\n
                               /r - Romantic\n
                               /nm - Not Mad\n
+                              /neg - Negative
+                              /pos - Positive
                               """,
                               colour=0xA020F0)
         embed.set_footer(text="Wanna see more tags? Suggest it using the /suggesttone command!")
