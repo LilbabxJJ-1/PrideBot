@@ -29,6 +29,16 @@ class funCommands(commands.Cog):
         await ctx.respond(embed=embed)
         return
 
+
+    @commands.slash_command(name="love-compatibility")
+    async def test(self, ctx, seconduser: discord.Option(discord.User, description="The person you're testing your compatibility with")):
+        """Test your love compatibility with others"""
+        embed = discord.Embed(title="💘Love Compatibility💞",
+                              description="",
+                              color=0xA020F0)
+        embed.set_image(url=f"https://api.resetxd.xyz/love-me?avatar1={ctx.author.avatar}&avatar2={seconduser.avatar}")
+
+
     @commands.slash_command(name="jail")
     async def jail(self, ctx, user: discord.Option(discord.User, description="User or leave blank if yourself") = None):
         """Watch as your pfp spends time in jail"""
