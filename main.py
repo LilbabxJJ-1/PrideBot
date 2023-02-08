@@ -72,7 +72,7 @@ async def botinfo(ctx):
     defcount = mycol.count_documents({})
     embed=discord.Embed(title="Bot Info",
                         description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n **Servers**: {len(bot.guilds)}"
-                                    f"\n**Definitions**: {procount}\n**Profiles Created**: {defcount}",
+                                    f"\n**Definitions**: {defcount}\n**Profiles Created**: {procount}",
                         color=0xA020F0)
     embed.set_thumbnail(url=bot.user.avatar)
     embed.set_footer(text="Invite me to your server with /invite")
