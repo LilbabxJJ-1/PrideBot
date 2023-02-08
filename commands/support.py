@@ -81,7 +81,7 @@ class supportCommands(commands.Cog):
 
 
     @commands.slash_command(name="help")
-    async def help(self, ctx, category: discord.Option(str, choices=['Definitions', 'Pronouns', "Support", "Profile", "Misc"])):
+    async def help(self, ctx, category: discord.Option(str, choices=['Definitions', 'Pronouns', "Support", "Profile", "Fun", "Misc"])):
         """Find out commands in a specific category and what it does"""
         if category == "Definitions":
             embed = discord.Embed(title=f"Commands for {category}",
@@ -123,6 +123,13 @@ class supportCommands(commands.Cog):
             embed.set_footer(text="Remember to check out the other commands!")
             embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
+        elif category == "Fun":
+            embed = discord.Embed(title=f"Commands for {category}",
+                                  description=f" </jail:1072951756625023007> - Get an image of you in jail\n"
+                                              f" </ship:1072951756625023006> - Ship 2 friends together\n"
+                                              f" </whowouldwin:1072929546589978754> - Place your fighting bets against someone else!\n",
+                                  colour=0xA020F0)
+            embed.set_footer(text="Remember to check out the other commands!")
         else:
             embed = discord.Embed(title=f"Commands for {category}",
                                   description=f" </vote:1068765760568180806> - Vote and review the bot on TopGG\n"

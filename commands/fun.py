@@ -20,6 +20,7 @@ class funCommands(commands.Cog):
 
     @commands.slash_command(name="ship")
     async def ship(self, ctx, user1: discord.Option(discord.User, description="First person to ship"), user2: discord.Option(discord.User, description="2nd person to ship")):
+        """Ship 2 of your love dovey friends"""
         embed=discord.Embed(title="Aww! We ship it!",
                             description="",
                             color=0xA020F0)
@@ -29,6 +30,7 @@ class funCommands(commands.Cog):
 
     @commands.slash_command(name="jail")
     async def jail(self, ctx, user: discord.Option(discord.User, description="User or leave blank if yourself")=None):
+        """Watch as your pfp spends time in jail"""
         if user is None:
             embed = discord.Embed(title="La gasp! Criminal",
                                   description="",
