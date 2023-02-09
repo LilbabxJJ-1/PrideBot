@@ -15,9 +15,17 @@ bot = cd.Bot(case_insensitive=True, intents=intents, help_command=None, activity
 dbl_token = dbltoken  # set this to your bot's Top.gg token
 bot.topggpy = topgg.DBLClient(bot, dbl_token, autopost=True, post_shard_count=True)
 
-
 @bot.event
 async def on_interaction(interaction):
+    count = profiles.find_one({"_id":"total_commands"})
+    if count is None:
+        new = {
+            "_id": "total_commands",
+            "Count": 0
+        }
+        profiles.insert_one(new)
+    else:
+        profiles.update_one({"_id":"total_commands"}, {"$set":{"Count": count["Count"]+1}})
     users = banned.find_one({"get":"get"})
     for i in users["Banned"]:
         if interaction.user.id == i:
@@ -25,6 +33,7 @@ async def on_interaction(interaction):
             return
     else:
         await bot.process_application_commands(interaction)
+
 
 
 
@@ -69,9 +78,10 @@ async def botinfo(ctx):
     """See information about PrideBot"""
     procount = profiles.count_documents({})
     defcount = mycol.count_documents({})
+    count = profiles.find_one({"_id": "total_commands"})
     embed=discord.Embed(title="Bot Info",
                         description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n**Servers**: {len(bot.guilds)}"
-                                    f"\n**Definitions**: {defcount}\n**Profiles Created**: {procount}",
+                                    f"\n**Definitions**: {defcount}\n**Profiles Created**: {procount}\n**Commands Used**: {count['Count']}",
                         color=0xA020F0)
     embed.set_thumbnail(url=bot.user.avatar)
     embed.set_footer(text="Invite me to your server with /invite")
