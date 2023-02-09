@@ -81,7 +81,7 @@ async def botinfo(ctx):
     count = profiles.find_one({"_id": "total_commands"})
     embed=discord.Embed(title="Bot Info",
                         description=f"**Name**: PrideBot\n**ID**: {bot.user.id}\n**Slash-Commands**: {len(bot.application_commands)}\n**Users**: {len(bot.users)}\n**Servers**: {len(bot.guilds)}"
-                                    f"\n**Definitions**: {defcount}\n**Profiles Created**: {procount}\n**Commands Used**: {count['Count']}",
+                                    f"\n**Definitions**: {defcount}\n**Profiles Created**: {procount}\n",
                         color=0xA020F0)
     embed.set_thumbnail(url=bot.user.avatar)
     embed.set_footer(text="Invite me to your server with /invite")
