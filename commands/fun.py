@@ -37,8 +37,9 @@ class funCommands(commands.Cog):
         embed = discord.Embed(title="💘Love Compatibility💞",
                               description="",
                               color=0xA020F0)
-        print(ctx.author.avatar)
-        embed.set_image(url=f"https://api.resetxd.xyz/love-me?avatar1={ctx.author.avatar}&avatar2={seconduser.avatar}")
+        link = f"https://api.resetxd.xyz/love-me?avatar1={ctx.author.avatar}&avatar2={seconduser.avatar}"
+        embed.set_image(url=link)
+        print(link)
         await ctx.respond(embed=embed)
 
 
