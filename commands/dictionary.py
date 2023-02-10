@@ -84,10 +84,11 @@ class DictionaryCommands(commands.Cog):
                               /r - Romantic\n
                               /nm - Not Mad\n
                               /neg - Negative\n
-                              /pos - Positive
+                              /pos - Positive\n
+                              /jp - Just Playing
                               """,
                               colour=0xA020F0)
-        embed.set_footer(text="Wanna see more tags? Suggest it using the /suggesttone command!")
+        embed.set_footer(text="Wanna see more tags? Suggest it using the /suggest-tonetags command!")
         await ctx.respond(embed=embed)
         return
 
