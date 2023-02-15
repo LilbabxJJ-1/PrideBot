@@ -96,6 +96,10 @@ async def on_ready():
 async def on_command_error(ctx, error):
     if isinstance(error, discord.ApplicationCommandInvokeError):
         await ctx.respond("An error occurred, try again please.. 🌈", ephemeral=True)
+    elif isinstance(error, discord.errors.Forbidden):
+        owner = await bot.fetch_user(ctx.guild.owner_id)
+        await owner.send(f"Hiya, I am sending this message to the server owner to let you know that I cannot speak in {ctx.channel}, where someone is trying to use my commands. This is most likely due to my role permissions!\n"
+        f"Make sure that I have the perms to speak if the given channel if you want commands to be able to be used there! Thank you")
 
 
 @bot.slash_command(name="donate")
