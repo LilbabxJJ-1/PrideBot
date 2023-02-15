@@ -27,7 +27,8 @@ class supportCommands(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.slash_command(name="support")
-    async def support(self, ctx, type: discord.Option(description="Type of support info you need", choices=['HRT', 'Therapy', "Hotlines", "Talking to Family", "Coming Out"])):
+    async def support(self, ctx, type: discord.Option(description="Type of support info you need",
+                                                      choices=['HRT', 'Therapy', "Hotlines", "Talking to Family", "Coming Out"])):
         """Get support as a person of the LGBTQ+ community"""
         if type == "HRT":
             embed = discord.Embed(title="Support for HRT",
@@ -67,7 +68,6 @@ class supportCommands(commands.Cog):
                                   description="Coming soon...",
                                   colour=0xA020F0)
 
-
         await ctx.respond(embed=embed)
         chances = random.choice(list(range(1, 100)))
         if chances <= 15:
@@ -78,14 +78,13 @@ class supportCommands(commands.Cog):
                                   colour=0xA020F0)
             await ctx.send(embed=embed)
 
-
-
     @commands.slash_command(name="help")
     async def help(self, ctx, category: discord.Option(str, choices=['Definitions', 'Pronouns', "Support", "Profile", "Fun", "Misc"])):
         """Find out commands in a specific category and what it does"""
         if category == "Definitions":
             embed = discord.Embed(title=f"Commands for {category}",
-                                  description=f" </define:1067134957723594772> `word` - Defines a given LGBTQ related term\n"
+                                  description=f" </define:1067134957723594772> `term` - Defines a given LGBTQ related term\n"
+                                              f" </suggest-definition:1072923893951627334> `term` `definition`\n"
                                               f" </tonetags:1067884336868769803> - Gives a list of common tonetags\n"
                                               f" </suggesttone:1067884336868769804> `tonetag` - Allows user to suggest a tonetag to the /tonetags list",
                                   colour=0xA020F0)
@@ -118,7 +117,7 @@ class supportCommands(commands.Cog):
                                               f" /profile pronouns `new pronouns` - Update the pronouns on your profile\n"
                                               f" /profile closet `new closet status` - Update the closet status on your profile\n"
                                               f" /profile gender `new gender` - Update the gender on your profile\n"
-                                              ,
+                                  ,
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
             embed.set_thumbnail(url=self.bot.user.avatar)

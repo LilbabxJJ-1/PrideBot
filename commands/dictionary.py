@@ -39,6 +39,7 @@ class DictionaryCommands(commands.Cog):
 
     @commands.slash_command(name="suggest-definition")
     async def suggestdef(self, ctx, term: discord.Option(description="LGBTQ+ Term"), definition: discord.Option(description="Definition of the term")):
+        """Suggest a term and definition to add to the bots database"""
         embed = discord.Embed(title="New Defintion Suggested",
                               description=f"Term: {term}\nDefiniton: {definition}\nID: {ctx.author.id}",
                               color=0xA020F0)
