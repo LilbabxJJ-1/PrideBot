@@ -10,8 +10,8 @@ class DictionaryCommands(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(name="define")
-    async def define(self, ctx, word: discord.Option(description="LGBTQ+ word to look up")):
-        """Get a definition for our LGBTQ terms"""
+    async def define(self, ctx, word: discord.Option(description="LGBTQ+ word to look up")=None):
+        """Get a definition for our LGBTQ terms | Can't decide? Leave blank for a list"""
         chances = random.choice(list(range(1, 100)))
         if chances <= 15:
             embed = discord.Embed(title="Like the bot?",
@@ -20,6 +20,15 @@ class DictionaryCommands(commands.Cog):
                                               "\n -->..https://top.gg/bot/1066641327116255333#reviews",
                                   colour=0xA020F0)
             await ctx.send(embed=embed)
+        if word is None:
+            definitions = mycol.find_one({"ID": "Total"})
+            lst = ""
+            for i in definitions["All"]:
+                lst += f"{i}\n"
+            embed = discord.Embed(title="Current Dictionary",
+                                  description=lst,
+                                  color=0xA020F0)
+            await ctx.respond(embed=embed)
         term = mycol.find_one({"Term": str(word).title()})
         if term is not None:
             embed = discord.Embed(title=f"Definition for {str(word).title()}",
