@@ -93,8 +93,9 @@ async def botinfo(ctx):
 async def newupdate(ctx):
     """Get news on what updates were recently made to PrideBot"""
     new = mycol.find_one({"ID": "Updates"})
+    text = new["updateDescription"].replace("\n", "\n")
     embed = discord.Embed(title=new["updateTitle"],
-                          description=new["updateDescription"],
+                          description=text,
                           color=0xA020F0)
     embed.set_thumbnail(url=bot.user.avatar)
     embed.set_footer(text="Check back anytime for updates")
@@ -108,7 +109,7 @@ async def makeupdate(ctx, title, update):
         return
     mycol.update_one({"ID":"Updates"}, {"$set":{"updateTitle": title}})
     mycol.update_one({"ID": "Updates"}, {"$set": {"updateDescription": update}})
-    ctx.respond("Successfully updated the what's new page")
+    await ctx.respond("Successfully updated the what's new page")
 
 @bot.event
 async def on_ready():
