@@ -29,6 +29,7 @@ class DictionaryCommands(commands.Cog):
                                   description=lst,
                                   color=0xA020F0)
             await ctx.respond(embed=embed)
+            return
         term = mycol.find_one({"Term": str(word).title()})
         if term is not None:
             embed = discord.Embed(title=f"Definition for {str(word).title()}",
