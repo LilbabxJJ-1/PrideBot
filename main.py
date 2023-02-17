@@ -93,9 +93,9 @@ async def on_ready():
     print("Bot is ready")
 
 @bot.event
-async def on_command_error(ctx, error):
+async def on_application_command_error(ctx, error):
     if isinstance(error, discord.ApplicationCommandInvokeError):
-        await ctx.respond("An error occurred, try again please.. 🌈", ephemeral=True)
+        await ctx.author.send("An error occurred, try again please.. 🌈 and make sure i have permission to speak in that channel", ephemeral=True)
 
 @bot.slash_command(name="donate")
 async def donate(ctx):
