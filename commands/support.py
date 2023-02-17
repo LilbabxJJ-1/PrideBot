@@ -69,7 +69,7 @@ class supportCommands(commands.Cog):
                                   colour=0xA020F0)
 
         await ctx.respond(embed=embed)
-        chances = random.choice(list(range(1, 100)))
+        chances = random.randint(1, 100)
         if chances <= 15:
             embed = discord.Embed(title="Like the bot?",
                                   description="If you're enjoying PrideBot, please consider donating to the owners GoFundMe to help them go to college!"
