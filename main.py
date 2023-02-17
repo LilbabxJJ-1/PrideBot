@@ -93,7 +93,7 @@ async def botinfo(ctx):
 async def newupdate(ctx):
     """Get news on what updates were recently made to PrideBot"""
     new = mycol.find_one({"ID": "Updates"})
-    text = new["updateDescription"].replace("\n", "\n")
+    text = new["updateDescription"].replace(r"\n", "\n")
     embed = discord.Embed(title=new["updateTitle"],
                           description=text,
                           color=0xA020F0)
