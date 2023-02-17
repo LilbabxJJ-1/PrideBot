@@ -102,9 +102,10 @@ async def newupdate(ctx):
 
 
 @bot.slash_command(name="make-update")
-@bot.is_owner()
 async def makeupdate(ctx, title, update):
     """For bot owner to make updates"""
+    if bot.is_owner(ctx.author) is not True:
+        return
     mycol.update_one({"ID":"Updates"}, {"$set":{"updateTitle": title}})
     mycol.update_one({"ID": "Updates"}, {"$set": {"updateDescription": update}})
     ctx.respond("Successfully updated the what's new page")
