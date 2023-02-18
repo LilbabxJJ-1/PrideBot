@@ -25,6 +25,7 @@ async def create(ctx, preferred_name: discord.Option(description="Your name"), s
     await ctx.respond(f"Profile made for {preferred_name.title()}!")
 
 
+
 @profile.command(name="check")
 async def check(ctx, user: discord.Option(discord.User, description="User who's profile you wish yo look at") = None):
     """Check out other users accounts or don't put a user to see your own"""
@@ -40,6 +41,43 @@ async def check(ctx, user: discord.Option(discord.User, description="User who's 
                                           f"\n----------------------\n\n♀Gender♂: {check['Gender']}"
                                           f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
                               colour=0xA020F0)
+        embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
+        embed.set_thumbnail(url=ctx.author.avatar)
+    else:
+        check = profiles.find_one({"ID": user.id})
+        if check is None:
+            await ctx.respond("No account found for this user! Please use /create first!")
+            return
+        embed = discord.Embed(title=f"{check['Name']}'s Profile",
+                              description=f":name_badge:Name:name_badge:: {check['Name']}"
+                                          f"\n----------------------\n\n📃Pronouns📃: {check['Pronouns']}"
+                                          f"\n----------------------\n\n🌈Sexuality🌈: {check['Sexuality']}"
+                                          f"\n----------------------\n\n♀Gender♂: {check['Gender']}"
+                                          f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
+                              colour=0xA020F0)
+        embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
+        embed.set_thumbnail(url=user.avatar)
+    return await ctx.respond(embed=embed)
+
+
+
+@profile.command(name="test")
+@commands.is_owner()
+async def test(ctx, user: discord.Option(discord.User, description="User who's profile you wish yo look at") = None):
+    """For Owner Use"""
+    if user is None:
+        check = profiles.find_one({"ID": ctx.author.id})
+        if check is None:
+            await ctx.respond("No account found for this user! Please use /create first!")
+            return
+        embed = discord.Embed(title=f"{check['Name']}'s Profile",
+                              description=f":name_badge:Name:name_badge:: {check['Name']}"
+                                          f"\n----------------------\n\n📃Pronouns📃: {check['Pronouns']}"
+                                          f"\n----------------------\n\n🌈Sexuality🌈: {check['Sexuality']}"
+                                          f"\n----------------------\n\n♀Gender♂: {check['Gender']}"
+                                          f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
+                              colour=0xA020F0)
+        embed.add_field(name="Name", value=f"{check['Name']}", inline=True)
         embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
         embed.set_thumbnail(url=ctx.author.avatar)
     else:
