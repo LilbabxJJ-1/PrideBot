@@ -75,7 +75,7 @@ async def test(ctx, user: discord.Option(discord.User, description="User who's p
                               colour=0xA020F0)
         embed.add_field(name="🕴️Name", value=f"{check['Name']}", inline=True)
         embed.add_field(name="📃Pronouns📃", value=f"{check['Pronouns']}", inline=True)
-        embed.add_field(name="🌈Sexuality🌈", value=f"{check['Sexuality']}", inline=True)
+        embed.add_field(name="🌈Sexuality🌈", value=f"{check['Sexuality']}", inline=False)
         embed.add_field(name="♀Gender♂", value=f"{check['Gender']}", inline=True)
         embed.add_field(name="In Closet🚪", value=f"{check['Closet']}", inline=True)
         embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
