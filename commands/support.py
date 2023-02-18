@@ -86,23 +86,23 @@ class supportCommands(commands.Cog):
                                   description=f" </define:1067134957723594772> `term` - Defines a given LGBTQ related term | Leave term blank for word list\n"
                                               f" </suggest-definition:1072923893951627334> `term` `definition`\n"
                                               f" </tonetags:1067884336868769803> - Gives a list of common tonetags\n"
-                                              f" </suggesttone:1067884336868769804> `tonetag` - Allows user to suggest a tonetag to the /tonetags list",
+                                              f" </suggest-tonetags:1067884336868769804> `tonetag` `Meaning` - Allows user to suggest a tonetag to the /tonetags list",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
             embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
         elif category == "Pronouns":
             embed = discord.Embed(title=f"Commands for {category}",
-                                  description=f" </testpronouns:1067343985900785695> - Use to test out pronouns (BETA):\n-`Name`\n-`Subjective Pronouns`\n-`Objective Pronouns`\n"
+                                  description=f" </test-pronouns:1067343985900785695> - Use to test out pronouns (BETA):\n-`Name`\n-`Subjective Pronouns`\n-`Objective Pronouns`\n"
                                               f"-`Possessive Determiner`\n-`Possessive Pronoun`\n-`Reflective Pronoun`\n"
-                                              f" </suggestpronouns:1067184141352845344> `sentence` - Suggest sentences to better the future of the pronoun command",
+                                              f" </suggest-pronouns:1067184141352845344> `sentence` - Suggest sentences to better the future of the pronoun command",
                                   colour=0xA020F0)
             embed.set_footer(text="Remember to check out the other commands!")
             embed.set_thumbnail(url=self.bot.user.avatar)
             await ctx.respond(embed=embed)
         elif category == "Support":
             embed = discord.Embed(title=f"Commands for {category}",
-                                  description=f" </prideservers:1067197553109635162> - Shows a list of safeplaces that you can join!\n"
+                                  description=f" </pride-servers:1067197553109635162> - Shows a list of safeplaces that you can join!\n"
                                               f" </support:1067333840877658142> `type` (Shown below):\n- Hrt\n - Therapy\n - Hotlines\n - Talking to familiy\n - Coming out\n"
                                               f" </whats-new:1076235433022865470> - Get news on updates on PrideBot`",
                                   colour=0xA020F0)
