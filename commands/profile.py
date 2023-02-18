@@ -78,6 +78,7 @@ async def test(ctx, user: discord.Option(discord.User, description="User who's p
                                           f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
                               colour=0xA020F0)
         embed.add_field(name="Name", value=f"{check['Name']}", inline=True)
+        embed.add_field(name="Prnouns", value=f"{check['Pronouns']}", inline=True)
         embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
         embed.set_thumbnail(url=ctx.author.avatar)
     else:
