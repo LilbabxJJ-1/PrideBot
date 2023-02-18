@@ -35,6 +35,9 @@ class DictionaryCommands(commands.Cog):
             embed = discord.Embed(title=f"Definition for {str(word).title()}",
                                   description=term["Definition"],
                                   colour=0xA020F0)
+            embed.set_footer(text="Remember definitions may very person to person")
+            embed.set_thumbnail(url=ctx.author.avatar)
+            embed.set_image(url="https://i.imgur.com/4M7IWwP.gif")
             await ctx.respond(embed=embed)
             return
         else:
