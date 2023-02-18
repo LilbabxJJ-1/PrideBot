@@ -71,17 +71,13 @@ async def test(ctx, user: discord.Option(discord.User, description="User who's p
             await ctx.respond("No account found for this user! Please use /create first!")
             return
         embed = discord.Embed(title=f"{check['Name']}'s Profile",
-                              description=f":name_badge:Name:name_badge:: {check['Name']}"
-                                          f"\n----------------------\n\n📃Pronouns📃: {check['Pronouns']}"
-                                          f"\n----------------------\n\n🌈Sexuality🌈: {check['Sexuality']}"
-                                          f"\n----------------------\n\n♀Gender♂: {check['Gender']}"
-                                          f"\n----------------------\n\nIn the closet?🚪: {check['Closet']}\n----------------------",
+                              description=f"",
                               colour=0xA020F0)
-        embed.add_field(name="Name", value=f"{check['Name']}", inline=True)
-        embed.add_field(name="Pronouns", value=f"{check['Pronouns']}", inline=True)
-        embed.add_field(name="Sexuality", value=f"{check['Sexuality']}", inline=True)
-        embed.add_field(name="Gender", value=f"{check['Gender']}", inline=True)
-        embed.add_field(name="In Closet", value=f"{check['Closet']}", inline=True)
+        embed.add_field(name="🕴️Name", value=f"{check['Name']}", inline=True)
+        embed.add_field(name="📃Pronouns📃", value=f"{check['Pronouns']}", inline=True)
+        embed.add_field(name="🌈Sexuality🌈", value=f"{check['Sexuality']}", inline=True)
+        embed.add_field(name="♀Gender♂", value=f"{check['Gender']}", inline=True)
+        embed.add_field(name="In Closet🚪", value=f"{check['Closet']}", inline=True)
         embed.set_footer(text=f"Welcome to {check['Name']}'s Profile")
         embed.set_thumbnail(url=ctx.author.avatar)
     else:
