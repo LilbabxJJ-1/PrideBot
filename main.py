@@ -1,4 +1,7 @@
+import random
+
 import discord
+from discord.ext import tasks
 from tokens import *
 from discord.ext import commands as cd
 from commands import dictionary as dic, pronouns as pro, support as sup, fun
@@ -52,6 +55,18 @@ async def on_autopost_success():
     print(
         f"Posted server count ({bot.topggpy.guild_count}), shard count ({bot.shard_count})"
     )
+
+
+@tasks.loop(seconds=40)  # How often the bot should change status, mine is set on every 40 seconds
+async def changepresence():
+    Owner = await bot.fetch_user(bot.owner_id)
+    game = [
+            'Myself Being built',
+            f"Over {len(bot.users)} users",
+            f"Helping {len(bot.guilds)} guilds come out",
+            f"Created by {Owner.name}"
+        ]
+    await bot.change_presence(activity=discord.ActivityType.watching(name=random.choice(game)))
 
 
 @bot.slash_command(name="support-server")
