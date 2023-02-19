@@ -129,6 +129,7 @@ async def makeupdate(ctx, title, update):
 @bot.event
 async def on_ready():
     print("Bot is ready")
+    changepresence.start()
 
 
 @bot.event
