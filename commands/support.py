@@ -13,9 +13,9 @@ class supportCommands(commands.Cog):
         """Get a list of LGBTQ oriented discord servers"""
         embed = discord.Embed(title="Servers for LGBTQ+",
                               description="***This bot is not affiliated or associated with these servers at all!***\n\nLGTBTQ+ Hangout - https://www.discord.gg/Pride"
-                                          "\nTranscord - https://discord.gg/trans\nThe LGBTQ+ Community - https://discord.gg/pridemonth\nEnby_eautiful - https://discord.gg/j8MCnEC64S"
-                                          "\nMore coming soon...",
+                                          "\nTranscord - https://discord.gg/trans\nThe LGBTQ+ Community - https://discord.gg/pridemonth\nEnby_eautiful - https://discord.gg/j8MCnEC64S",
                               colour=0xA020F0)
+        embed.set_image(url="https://i.imgur.com/4M7IWwP.gif")
         await ctx.respond(embed=embed)
         chances = random.choice(list(range(1, 100)))
         if chances <= 15:
