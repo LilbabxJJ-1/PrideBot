@@ -59,12 +59,10 @@ async def on_autopost_success():
 
 @tasks.loop(seconds=40)  # How often the bot should change status, mine is set on every 40 seconds
 async def changepresence():
-    Owner = await bot.fetch_user(bot.owner_id)
     game = [
             'Myself Being built',
             f"Over {len(bot.users)} users",
             f"Helping {len(bot.guilds)} guilds come out",
-            f"Created by {Owner.name}"
         ]
     await bot.change_presence(activity=discord.ActivityType.watching(name=random.choice(game)))
 
