@@ -64,7 +64,7 @@ async def changepresence():
             f"Over {len(bot.users)} users",
             f"Helping {len(bot.guilds)} guilds come out",
         ]
-    await bot.change_presence(activity=discord.ActivityType.watching(name=random.choice(game)))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=random.choice(game)))
 
 
 @bot.slash_command(name="support-server")
