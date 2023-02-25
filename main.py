@@ -30,7 +30,7 @@ async def on_interaction(interaction):
     users = banned.find_one({"get": "get"})
     for i in users["Banned"]:
         if interaction.user.id == i:
-            await interaction.channel.send("You have been banned from using this bot")
+            await interaction.channel.send("You have been banned from using this bot\nTo dispute this, join the support server")
             return
     else:
         await bot.process_application_commands(interaction)
